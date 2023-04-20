@@ -13,26 +13,26 @@ function playRound(playerSelection, computerSelection) {
             return "It's a TIE! Play again";
             break;
         case "rock":
-            if computer == "scissors" {
+            if (computer == "scissors") {
                 return "You WIN! Rock beats Scissors";
             } 
-            if computer == "paper" {
+            if (computer == "paper") {
                 return "You LOSE! Paper beats Rock";
             }
             break;
         case "paper":
-            if computer == "rock" {
+            if (computer == "rock") {
                 return "You WIN! Paper beats Rock";
             } 
-            if computer == "scissors" {
+            if (computer == "scissors") {
                 return "You LOSE! Scissors beats Paper";
             }
             break;
         case "scissors":
-            if computer == "paper" {
+            if (computer == "paper") {
                 return "You WIN! Scissors beats Paper";
             } 
-            if computer == "rock" {
+            if (computer == "rock") {
                 return "You LOSE! Rock beats Scissors";
             }
             break;
