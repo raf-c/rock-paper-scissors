@@ -4,49 +4,58 @@ function getComputerChoice() {
     return choice;
 }
 
+const display_result = document.querySelector('#results')
+const result = document.createElement('p');
+display_result.appendChild(result);
+
+
 function playRound(playerSelection, computerSelection) {
     player = playerSelection.toLowerCase();
     computer = computerSelection.toLowerCase();
 
     switch (player) {
         case computer:
-            console.log("TIE");
-            return "It's a TIE! Play again";
+            result.textContent = 'It\'s a TIE! Play again';
             break;
         case "rock":
             if (computer == "scissors") {
-                console.log("W,RbS");
-                return "You WIN! Rock beats Scissors";
+                result.textContent =  'You WIN! Rock beats Scissors';
             } 
             if (computer == "paper") {
-                console.log("L,PbR");
-                return "You LOSE! Paper beats Rock";
+                result.textContent =  'You LOSE! Paper beats Rock';
             }
             break;
         case "paper":
             if (computer == "rock") {
-                console.log("W,PbR");
-                return "You WIN! Paper beats Rock";
+                result.textContent =  'You WIN! Paper beats Rock';
             } 
             if (computer == "scissors") {
-                console.log("L,SbP");
-                return "You LOSE! Scissors beats Paper";
+                result.textContent =  'You LOSE! Scissors beats Paper';
             }
             break;
         case "scissors":
             if (computer == "paper") {
-                console.log("W,SbP");
-                return "You WIN! Scissors beats Paper";
+                result.textContent =  'You WIN! Scissors beats Paper';
             } 
             if (computer == "rock") {
-                console.log("L,RbS");
-                return "You LOSE! Rock beats Scissors";
+                result.textContent =  'You LOSE! Rock beats Scissors';
             }
             break;
     }
 }
 
-function runGame() {
+const buttons = document.querySelectorAll('button');
+
+buttons.forEach((btn) => {
+    btn.addEventListener('click', () =>{
+        console.log(btn.className);
+        playRound(btn.className,getComputerChoice());
+    });//
+});
+
+
+
+/*function runGame() {
     i = 5
     while (i!=1) {
         ps = prompt("Enter your move");
@@ -55,7 +64,7 @@ function runGame() {
         i--;
     }
 }
-   
+*/
 
 
 
